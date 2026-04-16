@@ -74,14 +74,6 @@ jobs:
           app-name: 'hw2-xhorak1'
           slot-name: 'Production'
 
-      - name: Ensure assets container exists
-        run: |
-          az storage container create \
-            --account-name accountorcje \
-            --name assets \
-            --public-access blob \
-            --auth-mode login
-
       - name: Upload static files to Azure Blob Storage
         run: |
           az storage blob upload-batch \
